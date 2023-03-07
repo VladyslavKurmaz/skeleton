@@ -1,0 +1,59 @@
+services:
+  web:
+    container_name: 'new_project_container_prefix-web'
+    stdin_open: true
+    tty: true
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+      - ~/.ssh:/root/.ssh
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history 
+    depends_on:
+      - db
+  cypress-web:
+    container_name: 'new_project_container_prefix-cypress-web'
+    build: .
+    command: bash -c "rm -f tmp/pids/server-cypress.pid && bin/rails s -p 5002 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "5002:5002"
+    env_file:
+      - .env
+    environment:
+      - RAILS_ENV=test
+      - HISTFILE=/usr/src/app/log/.bash_history
+      - PIDFILE=tmp/pids/server-cypress.pid
+    depends_on:
+      - db
+  delayed_job:
+    container_name: 'new_project_container_prefix-delayed-job'
+    build: .
+    env_file:
+      - .env
+    command: bundle exec rails jobs:work
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    depends_on:
+      - db
+  db:
+    container_name: 'new_project_container_prefix-db'
+    image: postgis/postgis:15-3.3
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=tmp_password
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
+  bundle:
