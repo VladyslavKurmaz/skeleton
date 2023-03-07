@@ -1,6 +1,6 @@
  # frozen_string_literal: true
 
-server '52.56.167.20',
+server '0.0.0.0',
        user: 'deploy',
        roles: %w[app db web],
        primary: true
