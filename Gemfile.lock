@@ -74,8 +74,6 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    acts_as_list (1.1.0)
-      activerecord (>= 4.2)
     airbrussh (1.4.1)
       sshkit (>= 1.6.1, != 1.7.0)
     annotate (3.2.0)
@@ -428,7 +426,6 @@ PLATFORMS
 DEPENDENCIES
   active_storage_validations
   activerecord-postgis-adapter
-  acts_as_list
   annotate
   aws-sdk-s3
   bootsnap

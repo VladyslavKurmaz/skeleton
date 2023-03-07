@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  authenticate :user do
-    mount Motor::Admin => '/motor_admin'
-  end
+  root 'home#show'
 
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  root 'home#show'
+  authenticate :user do
+    mount Motor::Admin => '/motor_admin'
+    mount DelayedJobWeb, at: "/delayed_job"
+  end
 end

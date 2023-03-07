@@ -62,7 +62,6 @@ gem 'money-rails'
 
 gem 'rails-patterns'
 
-gem 'acts_as_list'
 gem 'motor-admin'
 
 gem 'newrelic_rpm'
