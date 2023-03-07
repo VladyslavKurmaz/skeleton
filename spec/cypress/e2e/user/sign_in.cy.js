@@ -8,7 +8,7 @@ describe('Sign in', () => {
         cy.login('user@example.com', 'test123');
 
         cy.get('[id="alert"]').should('contain','Signed in successfully.')
-        cy.get('a[href*="/sign_out"]').contains('Sign out').should('be.hidden');
+        cy.get('a[href*="/sign_out"]').contains('Sign out').should('be.visible');
     });
 
     it('does not sign in user with invalid credentials', () => {
