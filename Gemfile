@@ -87,20 +87,20 @@ group :development do
 
   gem 'annotate', require: false
   gem 'brakeman', require: false
+  gem 'bullet'
   gem 'plantuml_builder', require: false
   gem 'rails_best_practices', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'bullet'
 
   # capistrano deployment
   gem 'capistrano', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
-  gem 'capistrano-rbenv', require: false
   gem 'capistrano-rake', require: false
+  gem 'capistrano-rbenv', require: false
 end
 
 group :test do

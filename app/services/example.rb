@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class Example < Patterns::Service
-  # rubocop:disable Lint/MissingSuper
   def initialize(user)
     @user = user
   end
-  # rubocop:enable Lint/MissingSuper
 
   def call
     some_example_logic

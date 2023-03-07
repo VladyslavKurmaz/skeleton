@@ -5,9 +5,9 @@ module Motor
     include CanCan::Ability
 
     def initialize(user, _request)
-      if user.present?
-        can :manage, :all
-      end
+      return if user.blank?
+
+      can :manage, :all
     end
   end
 end

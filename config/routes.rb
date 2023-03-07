@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   authenticate :user do
     mount Motor::Admin => '/motor_admin'
-    mount DelayedJobWeb, at: "/delayed_job"
+    mount DelayedJobWeb, at: '/delayed_job'
   end
 end
