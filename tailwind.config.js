@@ -1,7 +1,6 @@
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
-    './app/components/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js',
@@ -18,26 +17,18 @@ module.exports = {
       },
       colors: {
         primary: {
-          '50':'#FEF3F2',
-          '100':'#FEE4E2',
-          '200':'#FFCDC9',
-          '300':'#FDABA4',
-          '400':'#FA7A6F',
-          '500':'#F24F41',
-          '600':'#E24537',
-          '700':'#BC2619',
-          '800':'#9B2419',
-          '900':'#81231B'
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d'
         },
-        'red': {
-          700: '#A70000',
-        },
-        'green': {
-          700: '#10b981',
-        },
-        'darkblue': {
-          700: '#1F1845',
-        },
+
         'midnight-blue': {
           '50': '#B5ADE2',
           '100': '#A79EDD',
@@ -61,16 +52,11 @@ module.exports = {
           '700': '#434242',
           '800': '#383737',
           '900': '#333232',
-        },
-        'gray': {
-          200: '#f5f3ef',
-          300: '#DCD4D4',
-          500: '#333232',
         }
       }
-      
+
     },
-    
+
     fontFamily: {
       'body': [
         'Barlow',

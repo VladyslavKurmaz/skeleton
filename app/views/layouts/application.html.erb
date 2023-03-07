@@ -22,10 +22,10 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render "shared/alerts" %>
-
-    <%= turbo_frame_tag :turbo_modal %>
-
-    <%= yield %>
+    <div class="mt-12">
+      <%= render "shared/alerts" %>
+      <%= turbo_frame_tag :turbo_modal %>
+      <%= yield %>
+    </div>
   </body>
 </html>

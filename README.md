@@ -15,10 +15,12 @@ Make sure you have Docker and Nodejs 14 or higher installed.
 cp .env.example .env
 yarn dev:build
 yarn db:setup
+yarn dev:yarn:install
+yarn dev:start
 yarn test:cypress:headless
 ```
 
-## Running the Rails app with Tailwind and Yarn in "watch" mode
+## Running the Rails app with Tailwind and Esbuild assets compilation in "watch" mode
 ```
 yarn dev:start
 ```
