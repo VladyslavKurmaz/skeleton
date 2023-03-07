@@ -1,7 +1,6 @@
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
-    './app/components/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js',
@@ -29,15 +28,8 @@ module.exports = {
           '800':'#9B2419',
           '900':'#81231B'
         },
-        'red': {
-          700: '#A70000',
-        },
-        'green': {
-          700: '#10b981',
-        },
-        'darkblue': {
-          700: '#1F1845',
-        },
+
+
         'midnight-blue': {
           '50': '#B5ADE2',
           '100': '#A79EDD',
@@ -61,16 +53,11 @@ module.exports = {
           '700': '#434242',
           '800': '#383737',
           '900': '#333232',
-        },
-        'gray': {
-          200: '#f5f3ef',
-          300: '#DCD4D4',
-          500: '#333232',
         }
       }
-      
+
     },
-    
+
     fontFamily: {
       'body': [
         'Barlow',
