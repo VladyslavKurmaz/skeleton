@@ -60,7 +60,7 @@ Rails.application.configure do
     authentication: :plain,
     user_name: 'apikey',
     password: Rails.application.credentials.sendgrid_api_key,
-    domain: 'new_project_host',
+    domain: 'staging.domain.com',
     enable_starttls_auto: true,
   }
 

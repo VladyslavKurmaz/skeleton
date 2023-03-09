@@ -14,8 +14,8 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.action_mailer.default_url_options = { host: 'new_project_host' }
-  # Rails.application.routes.default_url_options[:host] = '52.56.167.20'
+  config.action_mailer.default_url_options = { host: 'staging.domain.com' }
+  # Rails.application.routes.default_url_options[:host] = 'staging.domain.com'
 
   # ActionMailer::Base.smtp_settings = {
   #   address: 'smtp.sendgrid.net',
@@ -23,7 +23,7 @@ Rails.application.configure do
   #   authentication: :plain,
   #   user_name: 'apikey',
   #   password: Rails.application.credentials.sendgrid_api_key,
-  #   domain: '52.56.167.20',
+  #   domain: 'staging.domain.com',
   #   enable_starttls_auto: true,
   # }
 
