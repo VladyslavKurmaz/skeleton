@@ -70,25 +70,22 @@ read -p "Do you want to install dependencies and build the application? [y/N] " 
 if [ "$app_build" != "${app_build#[Yy]}" ] ;then
   echo 'Application build has started...'
   cp -n .env.example .env
-  yarn dev:build
-  yarn db:setup
-  yarn dev:yarn:install
-  echo 'Application build has finished...'
+  docker-compose build
+  docker-compose run --rm web bash -c "bundle exec rake db:setup && bundle exec rake db:test:prepare && yarn install"
+  docker-compose up --detach
+  docker-compose run --rm web bash -c "yarn build && yarn build:css"
+  echo 'Application build has finished'
   echo
 
   echo 'Configuring cypress host machine dependencies...'
   asdf install
-  bunle install
+  bundle install
   yarn install
   yarn cypress install
   echo 'Configuring cypress host machine dependencies has finished'
   echo
 
   echo 'Application Health Testing start...'
-  yarn test:migrate
-  docker-compose up --detach
-  docker-compose exec web yarn build
-  docker-compose exec web yarn build:css
   yarn test:cypress:headless
   docker-compose down
   echo 'Application Health Testing has finished'

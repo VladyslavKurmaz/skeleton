@@ -48,6 +48,6 @@
     "deploy:production:restart": "docker-compose run --rm web bash -c 'eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa && bundle exec cap production puma:restart'"
   },
   "devDependencies": {
-    "cypress": "^12.6.0"
+    "cypress": "^12.7.0"
   }
 }
