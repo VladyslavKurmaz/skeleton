@@ -36,7 +36,7 @@
     "dev:debug": "docker attach new_project_container_prefix-web",
     "dev:lint": "docker-compose run --rm web bundle exec rubocop",
     "dev:lint:autocorrect": "docker-compose run --rm web bundle exec rubocop -a",
-    "dev:ngrok": "ngrok http 3000",
+    "dev:ngrok": "ngrok http new_project_dev_app_port",
     "dev:yarn:install": "docker-compose run --rm web yarn install",
     "deploy:check:staging": "docker-compose run --rm web bash -c 'eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa && bundle exec cap staging deploy:check'",
     "deploy:staging": "docker-compose run --rm web bash -c 'eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa && bundle exec cap staging deploy'",

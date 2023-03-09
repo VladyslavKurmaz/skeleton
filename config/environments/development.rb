@@ -52,7 +52,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: new_project_dev_app_port }
 
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.sendgrid.net',
