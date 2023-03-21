@@ -9,3 +9,4 @@ docker-compose-local.yml
 .gitlab-ci.yml
 Dockerfile*
 templates/
+node_modules/
