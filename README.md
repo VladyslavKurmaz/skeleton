@@ -50,10 +50,6 @@ yarn dev:lint
 yarn test:unit
 ```
 ## Running Cypress Tests (E2E)
-Before running E2E tests, the application should be running in the test container
-```
-yarn dev:up
-```
 Run Cypress tests in interactive mode
 ```
 yarn test:cypress:interactive
@@ -61,6 +57,24 @@ yarn test:cypress:interactive
 Run Cypress tests in headless mode
 ```
 yarn test:cypress:headless
+```
+
+## Measuring test coverage
+Run tests with enabled coverage measuring
+```
+# All tests
+yarn test:all
+
+# Only unit tests
+test:unit
+
+# Only E2E tests
+test:cypress:headless
+```
+Coverage report
+```
+test:coverage:open
+test:coverage:clear
 ```
 
 ## Debugging
@@ -91,50 +105,7 @@ yarn deploy:staging:rollback
 ```
 
 ## General info
-To run Tailwind in "watch" mode with separate command, to changes are automatically reflected in the generated CSS output.
-```
-yarn dev:tailwindcss:watch
-```
-
-To run esbuild in "watch" mode with separate command
-```
-yarn dev:esbuild:watch
-```
-
-List of all available development commands
-```
-yarn dev:build
-yarn dev:up
-yarn dev:start
-yarn dev:stop
-yarn dev:restart
-
-yarn db:seed
-yarn db:drop
-yarn db:migrate
-yarn db:migrate:status
-yarn db:create
-yarn db:reset
-yarn db:setup
-
-yarn test:migrate
-yarn test:unit
-yarn test:cypress:interactive
-yarn test:cypress:headless
-
-yarn dev:console
-yarn dev:tailwindcss:watch
-yarn dev:esbuild:watch
-yarn dev:containers:list
-yarn dev:debug
-yarn dev:lint
-yarn dev:lint:autocorrect
-yarn dev:ngrok
-yarn dev:yarn:install
-
-yarn deploy:check:staging
-yarn deploy:staging
-```
+List of all available development commands is in the file ./package.json
 
 ## Setting up Cypress Tests
 Ruby and Nodejs should be installed on the local machine to run the tests. You can use any method convenient for you to install. We recommend using asdf tool version manager. https://asdf-vm.com/guide/getting-started.html 

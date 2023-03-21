@@ -22,6 +22,7 @@ ENV LANG=C.UTF-8 \
 
 RUN gem update --system && gem install bundler
 RUN npm install --global yarn
+RUN gem install foreman
 
 WORKDIR /usr/src/app
 

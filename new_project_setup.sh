@@ -48,8 +48,8 @@ if [ "$app_configuration" != "${app_configuration#[Yy]}" ] ;then
   dev_port=${dev_port:-'3000'}
   if [[ $dev_port != "" ]]; then
     echo "'$search' marker was found and replaced with '$dev_port' in files:"
-    grep --include={*.yml,*.json,*.rb} -rl $search .
-    grep --include={*.yml,*.json,*.rb} -rl $search . | xargs sed -i '' -e "s/$search/$dev_port/g"
+    grep --include={*.yml,*.json,*.rb,*.dev} -rl $search .
+    grep --include={*.yml,*.json,*.rb,*.dev} -rl $search . | xargs sed -i '' -e "s/$search/$dev_port/g"
     echo
   fi
 
@@ -73,7 +73,6 @@ if [ "$app_build" != "${app_build#[Yy]}" ] ;then
   docker-compose build
   docker-compose run --rm web bash -c "bundle exec rake db:setup && bundle exec rake db:test:prepare && yarn install"
   docker-compose up --detach
-  docker-compose run --rm web bash -c "yarn build && yarn build:css"
   echo 'Application build has finished'
   echo
 
