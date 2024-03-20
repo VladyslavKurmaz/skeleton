@@ -124,7 +124,7 @@ jobs:
         run: |
           tln configure-provider:configure-group:construct-env:construct-app
           tln configure-provider:configure-group -- --apply --auto-approve
-          tln construct platform/env/aws -- --backend cloud --init --apply --auto-approve --layers network
+#          tln construct platform/env/aws -- --backend cloud --init --apply --auto-approve --layers network
           tln connect -- --ci
           tln construct-env:construct-app -- --apply --auto-approve
 
