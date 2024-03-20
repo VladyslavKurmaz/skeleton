@@ -1,7 +1,0 @@
-@startuml
-!theme vibrant
-
-' hide the spot
-hide circle
-
-@enduml
