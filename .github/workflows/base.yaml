@@ -88,19 +88,19 @@ jobs:
 
       - name: Init
         run: |
-          tln init-all -- --ref ${{ inputs.ref }}
+          tln init-all -- --reference ${{ inputs.ref }}
 
       - name: Format & Unit test
         if: ${{ contains(inputs.tests, 'unit') }}
         run: |
-          tln format-all:unit-test-all -- --ref ${{ inputs.ref }}
+          tln format-all:unit-test-all -- --reference ${{ inputs.ref }}
 
       - name: Spec test
         if: ${{ contains(inputs.tests, 'spec') }}
         run: |
           tln up platform
           docker ps -a
-          tln spec-test-all -- --ref ${{ inputs.ref }}
+          tln spec-test-all -- --reference ${{ inputs.ref }}
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -112,12 +112,12 @@ jobs:
       - name: Build
         if: ${{ inputs.build }}
         run: |
-          tln build-all -- --ref ${{ inputs.ref }}
+          tln build-all -- --reference ${{ inputs.ref }}
 
       - name: Package and Upload
         if: ${{ inputs.package-n-upload }}
         run: |
-          tln package-all:publish-all -- --ref ${{ inputs.ref }}
+          tln package-all:publish-all -- --reference ${{ inputs.ref }}
 
       - name: Construct
         if: ${{ inputs.construct }}
