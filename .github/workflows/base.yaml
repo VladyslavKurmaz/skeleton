@@ -98,7 +98,7 @@ jobs:
       - name: Spec test
         if: ${{ contains(inputs.tests, 'spec') }}
         run: |
-          tln up platform
+          #tln up platform
           docker ps -a
           tln spec-test-all -- --reference ${{ inputs.ref }}
 
