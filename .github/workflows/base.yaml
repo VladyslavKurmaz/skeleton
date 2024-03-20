@@ -132,7 +132,7 @@ jobs:
         if: ${{ inputs.deploy }}
         run: |
           tln undeploy-app
-          sleep 30
+          #sleep 30
           tln deploy-app
 
       - name: Run API tests
